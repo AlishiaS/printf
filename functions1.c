@@ -39,39 +39,16 @@ int print_rev(va_list r)
  */
 int print_octal(va_list o)
 {
-	unsigned va_list num = va_arg(0, unsigned int);
-	unsigned int cpy;
-	char *oct;
-	va_list i, j, charP = 0;
+	flags_t *f;
+	unsigned int n = va_arg(o, insigned int);
+	char *s = convert(n, 8, 0);
+	int c = 0;
 
-	if (num == 0)
-		return (_putchar('0'));
+	if (f->hash == 1 && s[0] != '0')
+		c += _putchar('0');
+	c += _putchar(s);
 
-	for (cpy = num; cpy != 0; j++)
-	{
-		cpy = cpy / 8;
-	}
-
-	*oct = malloc(j);
-	if (!oct)
-		return (-1);
-
-	for (i = j - 1; i >= 0; i--)
-	{
-		oct[i] = num % 8 + '0';
-		num = num / 8;
-	}
-
-	for (i = 0; i < j && oct[i] == '0'; i++)
-		;
-
-	for (; i < j; i++)
-	{
-		_putchar(oct[i]);
-		charP++;
-	}
-	free(*oct);
-	return (charP);
+	return (s);
 }
 
 
