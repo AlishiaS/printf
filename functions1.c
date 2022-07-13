@@ -1,6 +1,7 @@
 #include "main.h"
 #include <unistd.h>
 #include <stdio.h>
+#include <stdarg>
 
 /**
  * print_rev - prints a string in reverse
@@ -31,7 +32,6 @@ int print_rev(va_list r)
 	return (i);
 }
 
-
 /**
  * print_octal - prints number in octal base.
  * @0: list containing octal number to be printed
@@ -39,10 +39,10 @@ int print_rev(va_list r)
  */
 int print_octal(va_list o)
 {
-	unsigned int num = va_arg(0, unsigned int);
+	unsigned va_list num = va_arg(0, unsigned int);
 	unsigned int cpy;
 	char *oct;
-	int i, j, charP = 0;
+	va_list i, j, charP = 0;
 
 	if (num == 0)
 		return (_putchar('0'));
@@ -52,8 +52,7 @@ int print_octal(va_list o)
 		cpy = cpy / 8;
 	}
 
-	oct = malloc(j);
-
+	*oct = malloc(j);
 	if (!oct)
 		return (-1);
 
@@ -71,8 +70,7 @@ int print_octal(va_list o)
 		_putchar(oct[i]);
 		charP++;
 	}
-
-	free(oct);
+	free(*oct);
 	return (charP);
 }
 
