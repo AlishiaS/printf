@@ -13,7 +13,7 @@ int _printf(const char *format, ...)
 	if (!format)
 		return (-1);
 
-	va_start (arg, format);
+	va_start(arg, format);
 	n = _vprintf(stdout, format, arg);
 	va_end(arg);
 
