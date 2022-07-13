@@ -32,26 +32,6 @@ int print_rev(va_list r)
 	return (i);
 }
 
-/**
- * print_octal - prints number in octal base.
- * @0: list containing octal number to be printed
- * Return: number of octals printed
- */
-int print_octal(va_list o)
-{
-	flags_t *f;
-	unsigned int n = va_arg(o, insigned int);
-	char *s = convert(n, 8, 0);
-	int c = 0;
-
-	if (f->hash == 1 && s[0] != '0')
-		c += _putchar('0');
-	c += _putchar(s);
-
-	return (s);
-}
-
-
 
 /**
  * print_rot13 - prints a string using rot13
