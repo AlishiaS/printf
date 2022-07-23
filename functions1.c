@@ -64,3 +64,19 @@ int print_rot13(va_list R)
 	}
 	return (j);
 }
+
+
+/**
+ * print_octal - prints number in octal base
+ * @o: list containing octal number to be printed
+ *
+ * Return: number of octals printed
+ */
+int print_octal(va_list o)
+{
+	int n = 0;
+
+	print_o(va_arg(o, int), &n);
+
+	return (n);
+}
