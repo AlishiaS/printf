@@ -74,9 +74,24 @@ int print_rot13(va_list R)
  */
 int print_octal(va_list o)
 {
-	int n = 0;
+	unsigned int i;
+	int  a, b;
+	int arr[100];
 
-	print_octal(va_arg(o, int), &n);
-
-	return (n);
+	i = va_arg(o, unsigned int);
+	a = 0;
+	if (i == 0)
+	{
+		_putchar('0');
+		return (1);
+	}
+	while (i != 0)
+	{
+		arr[a] = c % 8;
+		i = i / 8;
+		a++;
+	}
+	for (b = (i - 1); b >= 0; b--)
+		_putchar(arr[b] + '0');
+	return (a);
 }
