@@ -87,7 +87,7 @@ int print_octal(va_list o)
 	}
 	while (i != 0)
 	{
-		arr[a] = c % 8;
+		arr[a] = i % 8;
 		i = i / 8;
 		a++;
 	}
