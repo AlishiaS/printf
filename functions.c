@@ -10,18 +10,11 @@
  */
 int print_int(va_list i)
 {
-	int num, *c;
+	int num;
 
-	c = malloc(sizeof(int));
+	num = print_number(i);
 
-	if (!c)
-		return (-1);
-
-	*c = 0;
-	num = va_arg(i, int);
-	*c = print_int(num, c);
-
-	return (*c);
+	return (num);
 }
 
 /**
