@@ -76,7 +76,7 @@ int print_octal(va_list o)
 {
 	int n = 0;
 
-	print_o(va_arg(o, int), &n);
+	print_octal(va_arg(o, int), &n);
 
 	return (n);
 }
