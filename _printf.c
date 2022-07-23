@@ -14,7 +14,7 @@ int _printf(const char *format, ...)
 		return (-1);
 
 	va_start(arg, format);
-	n = _vprintf(stdout, format, arg);
+	n = _printf(format, arg);
 	va_end(arg);
 
 	return (n);
