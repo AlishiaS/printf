@@ -38,17 +38,6 @@ int print_string(va_list s)
 
 
 /**
- * print_char - prints a character
- * @c: the object to be printed
- * Return: 1 on Success, else -1
- */
-int print_char(va_list c)
-{
-	return (_putchar(va_arg(c, int)));
-}
-
-
-/**
  * print_unsig - prints an unsigned int.
  * @u: argument
  * Return: 0
