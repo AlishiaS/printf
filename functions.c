@@ -12,14 +12,14 @@ int print_int(va_list i)
 {
 	int num, *c;
 
-	c = malloc(sizeof(*count));
+	c = malloc(sizeof(int));
 
 	if (!c)
 		return (-1);
 
 	*c = 0;
 	num = va_arg(i, int);
-	*c = _print_int(num, c);
+	*c = print_int(num, c);
 
 	return (*c);
 }
@@ -68,7 +68,7 @@ int print_unsig(va_list u)
 	for (i = 0; n / d > 9; i++, d *= 10)
 		;
 
-	for (; divisor >= 1; n %= d, d /= 10)
+	for (; d >= 1; n %= d, d /= 10)
 	{
 		r = n / d;
 		_putchar('0' + r);
