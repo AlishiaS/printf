@@ -12,7 +12,7 @@ int print_int(va_list i)
 {
 	int num;
 
-	num = print_number(i);
+	num = print_int(i);
 
 	return (num);
 }
